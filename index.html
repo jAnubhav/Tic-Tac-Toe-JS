@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/utils.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <section class="d-grid" id="cover">
+        <div class="d-grid bg-white" id="pop">
+            <p>Welcome to TicTacToe</p>
+
+            <div class="d-flex fld-col">
+                <p>Enter Your Name</p>
+                <input type="text" id="name">
+            </div>
+
+            <button onclick="getData()">Submit</button>
+        </div>
+    </section>
+
+    <section class="d-flex jc-center bg-blue" id="container">
+        <div class="d-grid" id="grid-container">
+            <template data-entity><img src="./img/entity/cross.png" alt="Cross"></template>
+            <template data-entity><img src="./img/entity/circle.png" alt="Circle"></template>
+        </div>
+
+        <div class="d-flex fld-col" id="card-container">
+            <div class="d-flex fld-col jc-center round-box br-50">
+                <p class="f-700 head-text" id="round"></p> <p class="f-700 sub-text">Round</p>
+            </div>
+
+            <div class="d-flex g-30" id="cards">
+                <p class="d-grid f-700 br-50 round-box" id="vs-box">V/S</p>
+
+                <template id="card-holder">
+                    <div class="d-flex fld-col g-30">
+                        <div class="d-flex fld-col jc-center box card">
+                            <div class="d-grid br-50 round-box">
+                                <img src="" alt="Photo">
+                            </div>
+                            
+                            <p class="name" data-name></p>
+                            <div class="en-holder br-10" data-en></div>
+                        </div>
+                        
+                        <div class="box">Rounds Won: </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

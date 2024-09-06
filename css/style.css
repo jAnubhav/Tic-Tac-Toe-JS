@@ -1,0 +1,126 @@
+#container {
+    gap: 8vw;
+    height: 100vh;
+}
+
+#grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+
+    padding: 10px;
+
+    background: var(--fade);
+    border-radius: 15px;
+}
+
+.cell {
+    width: 110px;
+    aspect-ratio: 1;
+
+    transition: .12s ease-in;
+}
+
+.cell img {
+    width: 70%;
+}
+
+.fresh:hover {
+    background: var(--dark);
+}
+
+#card-container {
+    gap: 40px;
+}
+
+.round-box {
+    width: 85px;
+    aspect-ratio: 1;
+
+    background: var(--yellow);
+}
+
+.head-text {
+    font-size: 1.6em;
+}
+
+.sub-text {
+    margin-top: -9px;
+    font-size: .85em;
+}
+
+.box {
+    position: relative;
+    text-align: center;
+
+    width: 160px;
+    padding: 10px;
+
+    color: var(--yellow);
+
+    font-size: .85em;
+    font-weight: 500;
+
+    border: 1px solid var(--yellow);
+    border-radius: 20px;
+}
+
+.card {
+    padding-top: 60px;
+    gap: 15px;
+    aspect-ratio: 1;
+}
+
+.card > .round-box {
+    position: absolute;
+    top: -50%;
+    transform: translateY(50%);
+
+    border: 5px solid var(--white);
+    box-shadow: 0 6px 0 var(--yellow);
+
+    overflow: hidden;
+}
+
+.round-box > img {
+    width: 100%;
+}
+
+.name {
+    font-size: 1.1em;
+}
+
+.en-holder {
+    width: 70px;
+    height: 30px;
+
+    padding: 7px;
+    background: var(--dark);
+}
+
+.en-holder > img {
+    height: 100%;
+}
+
+#vs-box {
+    width: 65px;
+    color: var(--dark);
+    font-size: 1.2em;
+}
+
+#cover {
+    position: fixed;
+    top: 0; left: 0;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    background: rgba(0, 0, 0, .4);
+    z-index: 10;
+}
+
+#pop {
+    width: 70vw;
+    height: 70vh;
+
+    border-radius: 40px;
+}

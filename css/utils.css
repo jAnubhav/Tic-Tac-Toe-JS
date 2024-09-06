@@ -1,0 +1,78 @@
+:root {
+    --blue: #131313;
+    --fade: #292929;
+    --dark: #0e0e0e;
+    
+    --white: #ffffff;
+    --yellow: #ffd000;
+
+    --circle: #ffe000;
+    --cross: #00c5ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.fld-col {
+    flex-direction: column;
+}
+
+.d-grid {
+    display: grid;
+    place-items: center;
+}
+
+.g-30 {
+    gap: 30px;
+}
+
+.d-none {
+    display: none;
+}
+
+.bg-blue {
+    background: var(--blue);
+}
+
+.bg-cross {
+    background: var(--cross);
+}
+
+.bg-circle {
+    background: var(--circle);
+}
+
+.bg-white {
+    background: var(--white);
+}
+
+.f-700 {
+    font-weight: 700;
+}
+
+.br-10 {
+    border-radius: 10px;
+}
+
+.br-50 {
+    border-radius: 50%;
+}
