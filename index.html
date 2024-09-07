@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <section class="d-grid h-100 bg-dark2" id="cover">
+    <section class="d-grid w-full h-100 bg-dark2 cover">
         <div class="d-grid bg-dark1" id="pop-up">
             <p class="head-text">Welcome to Tic Tac Toe</p>
 
@@ -37,8 +37,8 @@
                         ahead!
                     </p>
 
-                    <input type="text" class="br-10" name="name" id="name" autocomplete="off" maxlength="15">
-                    <button class="bg-yellow btn br-10" onclick="getData()">Start</button>
+                    <input type="text" class="w-full br-10" name="name" id="name" autocomplete="off" maxlength="15">
+                    <button class="w-full bg-yellow btn br-10" onclick="getData()">Start</button>
                 </div>
             </div>
         </div>
@@ -66,19 +66,21 @@
                     <div class="d-flex fld-col g-30">
                         <div class="d-flex fld-col jc-center box card">
                             <div class="d-grid br-50 round-box">
-                                <img src="" alt="Photo">
+                                <img class="w-full" alt="Photo">
                             </div>
                             
                             <p class="name" data-name></p>
                             <div class="bg-dark1 en-holder br-10" data-en></div>
                         </div>
                         
-                        <div class="box" data-round></div>
+                        <p class="box" data-round>Rounds Won: <label></label></p>
                     </div>
                 </template>
             </div>
         </div>
     </section>
+
+    <section class="h-100 cover"></section>
 
     <script src="./js/script.js"></script>
 </body>

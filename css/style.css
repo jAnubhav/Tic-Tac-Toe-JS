@@ -1,10 +1,8 @@
-#cover {
+.cover {
     position: fixed;
     top: 0; left: 0;
 
-    width: 100vw;
     color: var(--white);
-
     z-index: 10;
 }
 
@@ -64,7 +62,6 @@
 }
 
 #name, .btn {
-    width: 100%;
     padding: 7px 14px;
 
     border: 1px solid var(--yellow);
@@ -154,10 +151,6 @@
     box-shadow: 0 6px 0 var(--yellow);
 
     overflow: hidden;
-}
-
-.round-box > img {
-    width: 100%;
 }
 
 .en-holder {
