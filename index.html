@@ -37,17 +37,43 @@
                         ahead!
                     </p>
 
-                    <input type="text" name="name" id="name" autocomplete="off">
-                    <button class="bg-yellow btn" onclick="getData()">Start</button>
+                    <input type="text" class="br-10" name="name" id="name" autocomplete="off" maxlength="15">
+                    <button class="bg-yellow btn br-10" onclick="getData()">Start</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="d-flex jc-center g-20 h-100 bg-fade">
+    <section class="d-flex jc-center g-20 h-100 bg-dark2" id="container">
         <div class="d-grid bg-fade" id="grid-container">
             <template data-entity><img src="./img/entity/cross.png" alt="Cross"></template>
             <template data-entity><img src="./img/entity/circle.png" alt="Circle"></template>
+        </div>
+
+        <div class="d-flex fld-col" id="card-container">
+            <div class="d-flex fld-col jc-center round-box br-50">
+                <p class="f-700 head-text" id="round"></p>
+                <p class="sub-text">Round</p>
+            </div>
+
+            <div class="d-flex g-20" id="cards">
+                <p class="d-grid f-700 br-50 round-box" id="vs-box">V/S</p>
+
+                <template id="card-holder">
+                    <div class="d-flex fld-col g-30">
+                        <div class="d-flex fld-col jc-center box card">
+                            <div class="d-grid br-50 round-box">
+                                <img src="" alt="Photo">
+                            </div>
+                            
+                            <p class="name" data-name></p>
+                            <div class="bg-dark1 en-holder br-10" data-en></div>
+                        </div>
+                        
+                        <div class="box">Rounds Won: </div>
+                    </div>
+                </template>
+            </div>
         </div>
     </section>
 
