@@ -1,7 +1,7 @@
 :root {
-    --blue: #131313;
-    --fade: #292929;
-    --dark: #0e0e0e;
+    --dark1: #0a0a0a;
+    --dark2: #111111;
+    --fade: #202020;
     
     --white: #ffffff;
     --yellow: #ffd000;
@@ -21,6 +21,10 @@ button {
     border: none;
     outline: none;
     cursor: pointer;
+}
+
+input {
+    outline: none;
 }
 
 .d-flex {
@@ -49,8 +53,16 @@ button {
     display: none;
 }
 
-.bg-blue {
-    background: var(--blue);
+.bg-dark1 {
+    background: var(--dark1);
+}
+
+.bg-dark2 {
+    background: var(--dark2);
+}
+
+.bg-fade {
+    background: var(--fade);
 }
 
 .bg-cross {
@@ -59,10 +71,6 @@ button {
 
 .bg-circle {
     background: var(--circle);
-}
-
-.bg-white {
-    background: var(--white);
 }
 
 .f-700 {

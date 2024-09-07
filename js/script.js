@@ -69,7 +69,7 @@ document.addEventListener('keydown', event => {
 (() => {
     range(9).forEach(i => {
         let cell = createElem("button", {
-            className: "d-grid bg-blue br-10 cell fresh",
+            className: "d-grid bg-dark2 br-10 cell fresh",
             onclick: () => clicked(i)
         });
 
