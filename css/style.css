@@ -1,138 +1,66 @@
 #cover {
-    position: fixed;
-    top: 0; left: 0;
-    
-    width: 100vw;
-    height: 100vh;
-    
-    z-index: 10;
+    color: var(--white);
 }
 
-#pop {
-    width: 70vw;
+#pop-up {
     height: 70vh;
+    width: 60vw;
 
-    border-radius: 40px;
-}
-
-.btn {
-    padding: 8px 14px;
-
-    background: var(--yellow);
-    color: var(--dark1);
-
-    font-family: "lilita one";
-    font-size: 1em;
-
-    border-radius: 5px;
-}
-
-#container {
-    gap: 8vw;
-    height: 100vh;
-}
-
-#grid-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-
-    padding: 10px;
-    border-radius: 15px;
-}
-
-.cell {
-    width: 110px;
-    aspect-ratio: 1;
-
-    transition: .12s ease-in;
-}
-
-.cell img {
-    width: 70%;
-}
-
-.fresh:hover {
-    background: var(--dark1);
-}
-
-#card-container {
-    gap: 40px;
-}
-
-.round-box {
-    width: 85px;
-    aspect-ratio: 1;
-
-    background: var(--yellow);
+    padding: 30px;
+    border-radius: 50px;
 }
 
 .head-text {
-    font-size: 1.6em;
-    font-family: "lilita one";
+    font-size: 3em;
+}
+
+#pop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .sub-text {
-    margin-top: -5px;
-    font-size: .85em;
-    font-family: "lilita one";
+    font-size: 1.8em;
 }
 
-.box {
-    position: relative;
-    text-align: center;
+.rule-card {
+    gap: 5px;
+}
 
-    width: 160px;
-    padding: 10px;
+.nor-text {
+    margin-block: 15px;
 
+    font-size: 1.15em;
+    line-height: 1.5em;
+}
+
+.sm-icon {
+    width: 50px;
+}
+
+.lg-icon {
+    width: 75px;
+}
+
+#name-grid {
+    gap: 15px;
+}
+
+#name {
+    background: none;
     color: var(--yellow);
 
     font-size: .85em;
-    font-weight: 500;
+}
+
+.btn {
+    font-size: .95em;
+}
+
+#name, .btn {
+    width: 100%;
+    padding: 7px 14px;
 
     border: 1px solid var(--yellow);
-    border-radius: 20px;
-}
-
-.card {
-    padding-top: 60px;
-    gap: 15px;
-    aspect-ratio: 1;
-}
-
-.card > .round-box {
-    position: absolute;
-    top: -50%;
-    transform: translateY(50%);
-
-    border: 5px solid var(--white);
-    box-shadow: 0 6px 0 var(--yellow);
-
-    overflow: hidden;
-}
-
-.round-box > img {
-    width: 100%;
-}
-
-.name {
-    font-size: 1.1em;
-}
-
-.en-holder {
-    width: 70px;
-    height: 30px;
-
-    padding: 7px;
-}
-
-.en-holder > img {
-    height: 100%;
-}
-
-#vs-box {
-    width: 65px;
-    color: var(--dark2);
-
-    font-size: 1.2em;
-    font-family: "lilita one";
+    border-radius: 5px;
 }

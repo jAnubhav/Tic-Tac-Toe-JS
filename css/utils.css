@@ -1,7 +1,7 @@
 :root {
     --dark1: #0a0a0a;
-    --dark2: #111111;
-    --fade: #202020;
+    --dark2: #181818;
+    --fade: #222222;
     
     --white: #ffffff;
     --yellow: #ffd000;
@@ -13,7 +13,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "poppins", sans-serif;
+    font-family: "nerko one", sans-serif;
     box-sizing: border-box;
 }
 
@@ -53,6 +53,10 @@ input {
     display: none;
 }
 
+.h-100 {
+    height: 100vh;
+}
+
 .bg-dark1 {
     background: var(--dark1);
 }
@@ -83,10 +87,6 @@ input {
 
 .f-700 {
     font-weight: 700;
-}
-
-.f-lilita {
-    font-family: "lilita one";
 }
 
 .br-10 {
