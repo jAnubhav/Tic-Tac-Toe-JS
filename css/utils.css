@@ -65,6 +65,10 @@ input {
     background: var(--fade);
 }
 
+.bg-yellow {
+    background: var(--yellow);
+}
+
 .bg-cross {
     background: var(--cross);
 }
@@ -73,8 +77,16 @@ input {
     background: var(--circle);
 }
 
+.f-500 {
+    font-weight: 500;
+}
+
 .f-700 {
     font-weight: 700;
+}
+
+.f-lilita {
+    font-family: "lilita one";
 }
 
 .br-10 {
