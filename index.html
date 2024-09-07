@@ -19,28 +19,16 @@
         <div class="d-grid bg-dark1" id="pop-up">
             <p class="head-text">Welcome to Tic Tac Toe</p>
 
-            <div class="d-grid" id="pop-grid">
-                <div class="d-grid">
+            <div class="d-grid g-20" id="pop-grid">
+                <div class="d-grid" id="rule-grid">
                     <p class="sub-text">Game Rules</p>
-
-                    <div class="d-flex rule-card">
-                        <img class="sm-icon" src="./img/other/draw.png">
-                        <p>Get 3 marks in a row, Player wins. Game ends.</p>
-                        <img class="lg-icon" src="./img/other/draw board.png">
-                    </div>
-
-                    <div class="d-flex rule-card">
-                        <img class="sm-icon" src="./img/other/draw.png">
-                        <p>Get 3 marks in a row, Player wins. Game ends.</p>
-                        <img class="lg-icon" src="./img/other/draw board.png">
-                    </div>
-
-                    <div class="d-flex rule-card">
-                        <img class="sm-icon" src="./img/other/draw.png">
-                        <p>Get 3 marks in a row, Player wins. Game ends.</p>
-                        <img class="lg-icon" src="./img/other/draw board.png">
-                    </div>
                 </div>
+
+                <template id="rule-card-template">
+                    <div class="d-flex rule-card">
+                        <img class="sm-icon"><p></p><img class="lg-icon">
+                    </div>
+                </template>
 
                 <div class="d-grid" id="name-grid">
                     <p class="sub-text">Ready to Roll?</p>
@@ -50,9 +38,16 @@
                     </p>
 
                     <input type="text" name="name" id="name" autocomplete="off">
-                    <button class="bg-yellow btn">Start</button>
+                    <button class="bg-yellow btn" onclick="getData()">Start</button>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="d-flex jc-center g-20 h-100 bg-fade">
+        <div class="d-grid bg-fade" id="grid-container">
+            <template data-entity><img src="./img/entity/cross.png" alt="Cross"></template>
+            <template data-entity><img src="./img/entity/circle.png" alt="Circle"></template>
         </div>
     </section>
 

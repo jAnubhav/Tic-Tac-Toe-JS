@@ -1,6 +1,6 @@
 :root {
     --dark1: #0a0a0a;
-    --dark2: #181818;
+    --dark2: #141414;
     --fade: #222222;
     
     --white: #ffffff;
@@ -13,7 +13,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "nerko one", sans-serif;
+    font-family: "nerko one";
     box-sizing: border-box;
 }
 
@@ -43,6 +43,10 @@ input {
 .d-grid {
     display: grid;
     place-items: center;
+}
+
+.g-20 {
+    gap: 20px;
 }
 
 .g-30 {

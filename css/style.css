@@ -1,22 +1,25 @@
 #cover {
+    position: fixed;
+    top: 0; left: 0;
+
+    width: 100vw;
     color: var(--white);
 }
 
 #pop-up {
-    height: 70vh;
-    width: 60vw;
+    height: 73vh;
+    width: 62vw;
 
-    padding: 30px;
+    padding: 35px;
     border-radius: 50px;
 }
 
 .head-text {
-    font-size: 3em;
+    font-size: 3.2em;
 }
 
 #pop-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
 }
 
 .sub-text {
@@ -43,18 +46,18 @@
 }
 
 #name-grid {
-    gap: 15px;
+    gap: 12px;
 }
 
 #name {
     background: none;
     color: var(--yellow);
 
-    font-size: .85em;
+    font-size: 1em;
 }
 
 .btn {
-    font-size: .95em;
+    font-size: 1.15em;
 }
 
 #name, .btn {
@@ -63,4 +66,27 @@
 
     border: 1px solid var(--yellow);
     border-radius: 5px;
+}
+
+#grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.cell {
+    width: 110px;
+    aspect-ratio: 1;
+
+    transition: .12s ease-in;
+}
+
+.cell img {
+    width: 70%;
+}
+
+.fresh:hover {
+    background: var(--dark1);
 }
