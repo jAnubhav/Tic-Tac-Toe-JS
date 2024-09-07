@@ -14,7 +14,7 @@
     <title>Tic Tac Toe</title>
 </head>
 
-<body>
+<body class="bg-dark1">
     <section class="d-grid w-full h-100 bg-dark2 cover">
         <div class="d-grid bg-dark1" id="pop-up">
             <p class="head-text">Welcome to Tic Tac Toe</p>
@@ -44,8 +44,8 @@
         </div>
     </section>
 
-    <section class="d-flex jc-center g-20 h-100 bg-dark2" id="container">
-        <div class="d-grid bg-fade" id="grid-container">
+    <section class="d-flex jc-center d-none g-20 h-100 bg-dark2" id="container">
+        <div class="d-grid p-10 bg-fade" id="grid-container">
             <template data-entity><img src="./img/entity/cross.png" alt="Cross"></template>
             <template data-entity><img src="./img/entity/circle.png" alt="Circle"></template>
 
@@ -64,7 +64,7 @@
 
                 <template id="card-holder">
                     <div class="d-flex fld-col g-30">
-                        <div class="d-flex fld-col jc-center box card">
+                        <div class="d-flex fld-col jc-center p-10 box card">
                             <div class="d-grid br-50 round-box">
                                 <img class="w-full" alt="Photo">
                             </div>
@@ -73,14 +73,31 @@
                             <div class="bg-dark1 en-holder br-10" data-en></div>
                         </div>
                         
-                        <p class="box" data-round>Rounds Won: <label></label></p>
+                        <p class="p-10 box" data-round>Rounds Won: <label></label></p>
                     </div>
                 </template>
             </div>
         </div>
     </section>
 
-    <section class="h-100 cover"></section>
+    <section class="d-none d-grid w-full h-100 bg-dark1 cover" id="ending">
+        <div class="d-grid bg-dark1 g-30 br-10" id="end-pop-up">
+            <p class="head-text">You Won this Round</p>
+
+            <div class="d-flex g-30" id="score-card"></div>
+            
+            <template id="score-holder">
+                <div class="d-grid p-10 bg-yellow br-10 sub-text">
+                    <p>Score</p> <p data-score></p>
+                </div>
+            </template>
+
+            <div class="d-flex g-30">
+                <button class="bg-yellow br-10 btn">Next Round</button>
+                <button class="bg-yellow br-10 btn">Terminate</button>
+            </div>
+        </div>
+    </section>
 
     <script src="./js/script.js"></script>
 </body>

@@ -7,16 +7,14 @@ const getData = () => {
     if (name != '') {
         [name, "Computer"].forEach((e, i) => names[i].innerText = e);
         cover[0].classList.add("d-none"); startGame();
-    }
-}
 
-const setRounds = () => {
-    rounds.forEach((e, i) => e.innerText = wonRounds[i]);
+        document.getElementById("container").classList.remove("d-none");
+    }
 }
 
 const startGame = () => {
     counter.innerText = roundCount[round++];
-    setRounds();
+    rounds.forEach((e, i) => e.innerText = wonRounds[i]);
 }
 
 const clicked = ind => {
@@ -29,7 +27,7 @@ const clicked = ind => {
 
     if (data != null) {
         colorCells(data);
-        discolorCells(data);
+        setTimeout(roundEnd, 500);
     }
 }
 
@@ -61,12 +59,25 @@ const colorCells = arr => {
 const discolorCells = arr => {
     arr.forEach(e => {
         cells[e].classList.remove(`bg-${colors[ch]}`);
-        cells[e].classList.add("fresh"); cells[e].innerHTML = '';
     });
 }
 
-const reset = () => {
+const updateScore = () => { wonRounds[ch] += 1; ch = 1; }
 
+const reset = () => {
+    cells.forEach(e => {
+        e.classList.add("fresh");
+        e.innerHTML = '';
+    })
+
+    f = new Array(9).fill(-1);
+}
+
+const roundEnd = () => {
+    cover[1].classList.remove("d-none");
+    updateScore(); score.forEach((e, i) => {
+        e.innerText = wonRounds[i];
+    })
 }
 
 // Cover of the top with Pop-up
@@ -104,6 +115,11 @@ const wonRounds = [0, 0];
 const cards = document.getElementById("cards");
 const card_holder = document.getElementById("card-holder").content;
 
+const score_card = document.getElementById("score-card");
+const score_holder = document.getElementById("score-holder").content;
+
+const score = new Array();
+
 document.addEventListener("keydown", event => {
     if (event.key == "Enter" && !cover[0].classList.contains("d-none")) getData();
 });
@@ -140,4 +156,11 @@ document.addEventListener("keydown", event => {
 
         (e == 0) ? cards.prepend(card) : cards.append(card);
     });
+
+    range(2).forEach(e => {
+        let card = score_holder.cloneNode(true);
+        score.push(card.querySelector("[data-score]"));
+
+        score_card.append(card);
+    })
 })();

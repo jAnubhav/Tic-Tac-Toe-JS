@@ -3,6 +3,8 @@
     top: 0; left: 0;
 
     color: var(--white);
+
+    transition: .5s ease-in-out;
     z-index: 10;
 }
 
@@ -23,7 +25,7 @@
 }
 
 .sub-text {
-    font-size: 1.8em;
+    font-size: 1.5em;
 }
 
 .rule-card {
@@ -69,13 +71,13 @@
 
 #container {
     gap: 8vw;
+    transition: .5s ease-in-out .7s;
 }
 
 #grid-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
 
-    padding: 10px;
     border-radius: 15px;
 }
 
@@ -126,10 +128,8 @@
     text-align: center;
 
     width: 170px;
-    padding: 10px;
 
     font-size: 1.15em;
-
     color: var(--yellow);
 
     border: 1px solid var(--yellow);
@@ -162,4 +162,20 @@
 
 .en-holder > img {
     height: 100%;
+}
+
+#ending {
+    background: rgba(0, 0, 0, .9);
+    background-blend-mode: darken;
+
+    transition: .5s ease-in-out .5s;
+    z-index: 5;
+}
+
+#end-pop-up {
+    padding: 60px;
+}
+
+#score-card {
+    color: var(--dark1);
 }

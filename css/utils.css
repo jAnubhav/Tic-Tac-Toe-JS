@@ -54,7 +54,8 @@ input {
 }
 
 .d-none {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .w-full {
@@ -63,6 +64,10 @@ input {
 
 .h-100 {
     height: 100vh;
+}
+
+.p-10 {
+    padding: 10px;
 }
 
 .bg-dark1 {
