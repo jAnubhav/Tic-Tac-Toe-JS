@@ -6,31 +6,17 @@ const getData = () => {
 
     if (name != '') {
         cover.classList.add("d-none");
-        opponents[0] = name; startGame();
+        document.querySelector("[data-name]").innerText = opponents[0] = name; 
+        
+        startGame();
     }
 }
 
 const startGame = () => {
-    range(9).forEach(i => {
-        let cell = createElem("button", {
-            className: "d-grid bg-dark2 br-10 cell fresh",
-            onclick: () => clicked(i)
-        });
 
-        grid.append(cell); cells.push(cell);
-    });
 
     counter.innerText = rounds[round++];
 
-    opponents.forEach((name, e) => {
-        let card = card_holder.cloneNode(true);
-        card.querySelector("img").src = `./img/face/opponent ${e + 1}.png`;
-
-        card.querySelector("[data-name]").innerText = name;
-        card.querySelector("[data-en]").append(ent[e].content.cloneNode(true));
-
-        (e == 0) ? cards.prepend(card) : cards.append(card);
-    });
 }
 
 const clicked = ind => {
@@ -63,7 +49,18 @@ const checkWinner = () => {
 const colorCells = arr => {
     arr.forEach(e => {
         cells[e].classList.add(`bg-${colors[ch]}`);
+
+        cells[e].innerHTML = '';
+        cells[e].append(ent[ch + 2].content.cloneNode(true));
     })
+}
+
+const reset = () => {
+    cells.forEach(e => {
+        e.innerHTML = '';
+
+        e.classList.remove()
+    });
 }
 
 const rules = [
@@ -95,7 +92,8 @@ const counter = document.getElementById("round");
 const cards = document.getElementById("cards");
 const card_holder = document.getElementById("card-holder").content;
 
-const opponents = ["Name", "Computer"];
+const opponents = ["", "Computer"];
+const wonRounds = [0, 0];
 
 document.addEventListener("keydown", event => {
     if (event.key == "Enter" && !cover.classList.contains("d-none")) getData();
@@ -111,5 +109,25 @@ document.addEventListener("keydown", event => {
     //     card.querySelector("p").innerText = `${rules[e]} Game ends.`;
 
     //     ruleGrid.append(card);
-    // })
+    // });
+
+    range(9).forEach(i => {
+        let cell = createElem("button", {
+            className: "d-grid bg-dark2 br-10 cell fresh",
+            onclick: () => clicked(i)
+        });
+
+        grid.append(cell); cells.push(cell);
+    });
+
+    opponents.forEach((name, e) => {
+        let card = card_holder.cloneNode(true);
+        card.querySelector("img").src = `./img/face/opponent ${e + 1}.png`;
+
+        card.querySelector("[data-name]").innerText = name;
+        card.querySelector("[data-en]").append(ent[e].content.cloneNode(true));
+        card.querySelector("[data-round]").innerText = `Rounds Won: ${wonRounds[e]}`;
+
+        (e == 0) ? cards.prepend(card) : cards.append(card);
+    });
 })();
