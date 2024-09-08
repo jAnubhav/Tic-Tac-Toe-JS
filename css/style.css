@@ -1,11 +1,8 @@
-.cover {
+.layer {
     position: fixed;
     top: 0; left: 0;
 
-    color: var(--white);
-
     transition: .5s ease-in-out;
-    z-index: 10;
 }
 
 #pop-up {
@@ -13,30 +10,17 @@
     width: 62vw;
 
     padding: 35px;
+
+    color: var(--white);
     border-radius: 50px;
 }
 
 .head-text {
-    font-size: 3.2em;
-}
-
-#pop-grid {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.sub-text {
-    font-size: 1.5em;
+    font-size: 2.8em;
 }
 
 .rule-card {
     gap: 5px;
-}
-
-.nor-text {
-    margin-block: 15px;
-
-    font-size: 1.15em;
-    line-height: 1.5em;
 }
 
 .sm-icon {
@@ -49,6 +33,17 @@
 
 #name-grid {
     gap: 12px;
+}
+
+.sub-text {
+    font-size: 1.4em;
+}
+
+.nor-text {
+    margin-block: 15px;
+
+    font-size: 1.15em;
+    line-height: 1.5em;
 }
 
 #name {
@@ -65,13 +60,11 @@
 
 #name, .btn {
     padding: 7px 14px;
-
     border: 1px solid var(--yellow);
 }
 
-#container {
-    gap: 8vw;
-    transition: .5s ease-in-out .7s;
+.layer:nth-child(2) {
+    gap: 10vw;
 }
 
 #grid-container {
@@ -103,8 +96,6 @@
 .round-box {
     width: 85px;
     aspect-ratio: 1;
-
-    background: var(--yellow);
 }
 
 .round-box > .head-text {
@@ -124,9 +115,7 @@
 }
 
 .box {
-    position: relative;
     text-align: center;
-
     width: 170px;
 
     font-size: 1.15em;
@@ -137,20 +126,21 @@
 }
 
 .card {
-    padding-top: 60px;
+    position: relative;
     gap: 15px;
+    
     aspect-ratio: 1;
+    padding-top: 60px;
 }
 
 .card > .round-box {
     position: absolute;
     top: -50%;
-    transform: translateY(50%);
 
     border: 5px solid var(--white);
     box-shadow: 0 6px 0 var(--yellow);
-
-    overflow: hidden;
+    
+    transform: translateY(50%);
 }
 
 .en-holder {
@@ -162,20 +152,4 @@
 
 .en-holder > img {
     height: 100%;
-}
-
-#ending {
-    background: rgba(0, 0, 0, .9);
-    background-blend-mode: darken;
-
-    transition: .5s ease-in-out .5s;
-    z-index: 5;
-}
-
-#end-pop-up {
-    padding: 60px;
-}
-
-#score-card {
-    color: var(--dark1);
 }

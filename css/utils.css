@@ -45,6 +45,10 @@ input {
     place-items: center;
 }
 
+.gtc-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .g-20 {
     gap: 20px;
 }
