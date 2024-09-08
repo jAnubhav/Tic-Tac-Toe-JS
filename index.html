@@ -74,7 +74,24 @@
             </div>
         </section>
 
-        <section class="d-none d-grid w-full h-100 bg-dark2 layer">3</section>
+        <section class="d-none d-grid w-full h-100 bg-dark2 layer">
+            <div class="d-grid bg-dark1 g-30 br-10" id="end-pop-up">
+                <p class="head-text">You Won this Round</p>
+    
+                <div class="d-flex g-30" id="score-card"></div>
+                
+                <template id="score-holder">
+                    <div class="d-grid p-10 bg-yellow br-10 sub-text">
+                        <p>Score</p> <p data-score></p>
+                    </div>
+                </template>
+    
+                <div class="d-flex g-30">
+                    <button class="bg-yellow br-10 btn" onclick="nextRound()">Next Round</button>
+                    <button class="bg-yellow br-10 btn" onclick="terminate()">Terminate</button>
+                </div>
+            </div>
+        </section>
         
         <section class="d-none d-grid w-full h-100 bg-dark2 layer">4</section>
     </section>

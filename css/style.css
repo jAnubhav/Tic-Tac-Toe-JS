@@ -2,6 +2,8 @@
     position: fixed;
     top: 0; left: 0;
 
+    color: var(--white);
+
     transition: .5s ease-in-out;
 }
 
@@ -10,8 +12,6 @@
     width: 62vw;
 
     padding: 35px;
-
-    color: var(--white);
     border-radius: 50px;
 }
 
@@ -20,11 +20,11 @@
 }
 
 .rule-card {
-    gap: 5px;
+    gap: 10px;
 }
 
 .sm-icon {
-    width: 50px;
+    width: 40px;
 }
 
 .lg-icon {
@@ -65,6 +65,7 @@
 
 .layer:nth-child(2) {
     gap: 10vw;
+    transition-delay: .5s;
 }
 
 #grid-container {
@@ -96,6 +97,8 @@
 .round-box {
     width: 85px;
     aspect-ratio: 1;
+
+    color: var(--dark2);
 }
 
 .round-box > .head-text {
@@ -104,13 +107,10 @@
 
 .round-box > .sub-text {
     margin-top: -13px;
-    font-size: 1.3em;
 }
 
 #vs-box {
     width: 65px;
-    color: var(--dark2);
-
     font-size: 2em;
 }
 
@@ -152,4 +152,12 @@
 
 .en-holder > img {
     height: 100%;
+}
+
+#end-pop-up {
+    padding: 60px;
+}
+
+#score-card {
+    color: var(--dark1);
 }
