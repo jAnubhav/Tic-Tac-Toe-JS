@@ -1,5 +1,4 @@
 const range = end => Array.from(Array(end).keys());
-const createElem = (type, att) => Object.assign(document.createElement(type), { ...att });
 
 const getData = () => {
     const name = document.getElementById("name").value;
@@ -7,15 +6,11 @@ const getData = () => {
     if (name != '') {
         [name, "Computer"].forEach((e, i) => names[i].innerText = e);
 
-        startGame();
+        counter.innerText = roundCount[round++];
+        rounds.forEach((e, i) => e.innerText = wonRounds[i]);
+
         range(2).forEach(e => layers[e].classList.toggle("d-none"));
     }
-}
-
-const startGame = () => {
-    counter.innerText = roundCount[round++];
-    console.log(round);
-    rounds.forEach((e, i) => e.innerText = wonRounds[i]);
 }
 
 const clicked = ind => {
@@ -70,9 +65,7 @@ const nextRound = () => {
     cells.forEach(e => { e.classList.add("fresh"); e.innerHTML = ''; });
 
     if (round == 5) {
-        console.log("hello");
         round = 0; wonRounds = [0, 0];
-        console.log(round);
     }
 
     data.forEach(e => cells[e].classList.remove(`bg-${colors[ch]}`));
@@ -144,7 +137,7 @@ document.addEventListener("keydown", event => {
     // });
 
     range(9).forEach(i => {
-        let cell = createElem("button", {
+        let cell = Object.assign(document.createElement("button"), {
             className: "d-grid bg-dark2 br-10 cell fresh",
             onclick: () => clicked(i)
         });
