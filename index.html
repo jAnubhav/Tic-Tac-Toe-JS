@@ -76,7 +76,7 @@
 
         <section class="d-none d-grid w-full h-100 bg-dark2 layer">
             <div class="d-grid bg-dark1 g-30 br-10" id="end-pop-up">
-                <p class="head-text">You Won this Round</p>
+                <p class="head-text" id="round-text"></p>
     
                 <div class="d-flex g-30" id="score-card"></div>
                 
@@ -87,13 +87,11 @@
                 </template>
     
                 <div class="d-flex g-30">
-                    <button class="bg-yellow br-10 btn" onclick="nextRound()">Next Round</button>
+                    <button class="bg-yellow br-10 btn" onclick="nextRound()" id="g-btn"></button>
                     <button class="bg-yellow br-10 btn" onclick="terminate()">Terminate</button>
                 </div>
             </div>
         </section>
-        
-        <section class="d-none d-grid w-full h-100 bg-dark2 layer">4</section>
     </section>
 
     <script src="./js/script.js"></script>

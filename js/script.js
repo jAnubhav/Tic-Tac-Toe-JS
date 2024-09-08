@@ -23,13 +23,10 @@ const clicked = ind => {
     cells[ind].append(ent[f[ind] = ch ^= 1].content.cloneNode(true));
     cells[ind].classList.remove("fresh");
 
-    const data = checkWinner();
+    data = checkWinner();
 
-    if (data != null) {
-        colorCells(data);
-        setTimeout(roundEnd, 300);
-
-        cell_temp_data = data;
+    if (data != null) { colorCells();
+        setTimeout((round == 5) ? gameEnd : roundEnd, 300);
     }
 }
 
@@ -51,18 +48,23 @@ const checkWinner = () => {
     return null;
 }
 
-const colorCells = arr => arr.forEach(e => {
+const colorCells = () => data.forEach(e => {
     cells[e].classList.add(`bg-${colors[ch]}`); cells[e].innerHTML = '';
     cells[e].append(ent[ch + 2].content.cloneNode(true));
 });
 
-const roundEnd = () => {
+const endScreen = () => {
     layers[1].classList.add("d-none"); wonRounds[ch] += 1;
     setTimeout(() => layers[2].classList.remove("d-none"), 1000);
     score.forEach((e, i) => e.innerText = wonRounds[i]);
 }
 
-const discolorCells = arr => arr.forEach(e => cells[e].classList.remove(`bg-${colors[ch]}`));
+const roundEnd = () => {
+    endScreen(); document.getElementById("g-btn").innerText = "Next Round";
+    layers[2].querySelector("#round-text").innerText = (ch) ? "Round Lost" : "Round Won";
+}
+
+const discolorCells = () => data.forEach(e => cells[e].classList.remove(`bg-${colors[ch]}`));
 
 const nextRound = () => {
     range(2).forEach(e => layers[e + 1].classList.toggle("d-none"));
@@ -70,11 +72,23 @@ const nextRound = () => {
         e.classList.add("fresh"); e.innerHTML = '';
     })
 
-    discolorCells(cell_temp_data);
+    if (round == 5) {
+        round = 0; wonRounds = [0, 0];
+    }
+
+    discolorCells();
     f.fill(-1); ch = 1; startGame();
 }
 
+const gameEnd = () => {
+    endScreen(); document.getElementById("g-btn").innerText = "Next Game";
+    layers[2].querySelector("#round-text").innerText = (ch) ? "You Lose" : "You Win";
+}
 
+const terminate = () => {
+    range(2).forEach(e => layers[2 * e].classList.toggle("d-none"));
+    round = 5; nextRound();
+}
 
 
 const layers = document.getElementsByClassName("layer");
@@ -101,8 +115,8 @@ let round = 0;
 const roundCount = ["1st", "2nd", "3rd", "4th", "5th"];
 const counter = document.getElementById("round");
 
-const wonRounds = [0, 0];
-let cell_temp_data = null;
+let wonRounds = [0, 0];
+let data = null;
 
 let ch = 1;
 const f = new Array(9).fill(-1);
