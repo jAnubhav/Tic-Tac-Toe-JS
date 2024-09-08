@@ -14,6 +14,7 @@ const getData = () => {
 
 const startGame = () => {
     counter.innerText = roundCount[round++];
+    console.log(round);
     rounds.forEach((e, i) => e.innerText = wonRounds[i]);
 }
 
@@ -25,7 +26,12 @@ const clicked = ind => {
 
     data = checkWinner();
 
-    if (data != null) { colorCells();
+    if (data != null) {
+        data.forEach(e => {
+            cells[e].classList.add(`bg-${colors[ch]}`); cells[e].innerHTML = '';
+            cells[e].append(ent[ch + 2].content.cloneNode(true));
+        });
+
         setTimeout((round == 5) ? gameEnd : roundEnd, 300);
     }
 }
@@ -48,11 +54,6 @@ const checkWinner = () => {
     return null;
 }
 
-const colorCells = () => data.forEach(e => {
-    cells[e].classList.add(`bg-${colors[ch]}`); cells[e].innerHTML = '';
-    cells[e].append(ent[ch + 2].content.cloneNode(true));
-});
-
 const endScreen = () => {
     layers[1].classList.add("d-none"); wonRounds[ch] += 1;
     setTimeout(() => layers[2].classList.remove("d-none"), 1000);
@@ -64,29 +65,27 @@ const roundEnd = () => {
     layers[2].querySelector("#round-text").innerText = (ch) ? "Round Lost" : "Round Won";
 }
 
-const discolorCells = () => data.forEach(e => cells[e].classList.remove(`bg-${colors[ch]}`));
-
 const nextRound = () => {
     range(2).forEach(e => layers[e + 1].classList.toggle("d-none"));
-    cells.forEach(e => {
-        e.classList.add("fresh"); e.innerHTML = '';
-    })
+    cells.forEach(e => { e.classList.add("fresh"); e.innerHTML = ''; });
 
     if (round == 5) {
+        console.log("hello");
         round = 0; wonRounds = [0, 0];
+        console.log(round);
     }
 
-    discolorCells();
-    f.fill(-1); ch = 1; startGame();
+    data.forEach(e => cells[e].classList.remove(`bg-${colors[ch]}`));
+    f.fill(-1); ch = 1;
 }
 
 const gameEnd = () => {
     endScreen(); document.getElementById("g-btn").innerText = "Next Game";
-    layers[2].querySelector("#round-text").innerText = (ch) ? "You Lose" : "You Win";
+    layers[2].querySelector("#round-text").innerText = (wonRounds[0] < wonRounds[1]) ? "You Lose" : "You Win";
 }
 
 const terminate = () => {
-    range(2).forEach(e => layers[2 * e].classList.toggle("d-none"));
+    range(2).forEach(e => layers[e].classList.toggle("d-none"));
     round = 5; nextRound();
 }
 
@@ -164,7 +163,7 @@ document.addEventListener("keydown", event => {
 
         (e == 0) ? cards.prepend(card) : cards.append(card);
     });
-    
+
     range(2).forEach(e => {
         let card = score_holder.cloneNode(true);
         score.push(card.querySelector("[data-score]"));
