@@ -43,11 +43,13 @@ const clicked = ind => {
 
 const compChance = () => {
     let temp = null;
+
     while (true) {
         temp = Math.floor(Math.random() * 9);
         if (f[temp] == -1) break;
-    } clicked(temp);
-
+    } 
+    
+    clicked(temp);
     cells.forEach(e => e.classList.toggle("no-click"));
 }
 
@@ -127,7 +129,9 @@ const grid = document.getElementById("grid-container");
 
 const names = [], rounds = [];
 const ent = document.querySelectorAll("[data-entity]");
+
 const card_tem = document.getElementById("card-template").content;
+const cards = document.getElementById("cards");
 
 let round = 0;
 const roundCount = ["1st", "2nd", "3rd", "4th", "5th"];
