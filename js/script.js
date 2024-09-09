@@ -151,16 +151,16 @@ document.addEventListener("keydown", event => {
 });
 
 (() => {
-    // range(3).forEach(e => {
-    //     let card = rule_card.cloneNode(true);
+    range(3).forEach(e => {
+        let card = rule_card.cloneNode(true);
 
-    //     card.querySelector(".sm-icon").src = `./img/other/${icons[e]}.png`;
-    //     card.querySelector(".lg-icon").src = `./img/other/${icons[e]} board.png`;
+        card.querySelector(".sm-icon").src = `./img/other/${icons[e]}.png`;
+        card.querySelector(".lg-icon").src = `./img/other/${icons[e]} board.png`;
 
-    //     card.querySelector("p").innerText = `${rules[e]} Game ends.`;
+        card.querySelector("p").innerText = `${rules[e]} Game ends.`;
 
-    //     ruleGrid.append(card);
-    // });
+        ruleGrid.append(card);
+    });
 
     range(9).forEach(i => {
         let cell = Object.assign(document.createElement("button"), {
