@@ -37,11 +37,10 @@ This is a simple Tic Tac Toe game built with HTML, CSS, and JavaScript. The game
 ### Installation
 
 1. Clone or download this repository.
-2. Open the `index.html` file in any modern web browser to play the game.
-
 ```bash
 git clone https://github.com/jAnubhav/Tic-Tac-Toe-JS
 ```
+2. Open the `index.html` file in any modern web browser to play the game.
 
 ### Screenshots
 
