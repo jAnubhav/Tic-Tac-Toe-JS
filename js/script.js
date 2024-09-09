@@ -5,7 +5,7 @@ const getData = () => {
 
     if (name != '') {
         [name, "Computer"].forEach((e, i) => names[i].innerText = e);
-        startGame();
+        round = 0; startGame();
 
         range(2).forEach(e => layers[e].classList.toggle("d-none"));
     }
@@ -83,8 +83,7 @@ const endScreen = () => {
 
 const roundEnd = () => {
     endScreen(); document.getElementById("g-btn").innerText = "Next Round";
-    layers[2].querySelector("#round-text").innerText = 
-    (ch == 2) ? "Round Draw" : (ch == 1) ? "Round Lost" : "Round Won";
+    layers[2].querySelector("#round-text").innerText = (ch == 2) ? "Round Draw" : (ch == 1) ? "Round Lost" : "Round Won";
 }
 
 const nextRound = () => {
@@ -92,7 +91,7 @@ const nextRound = () => {
     cells.forEach(e => { e.classList.add("fresh"); e.innerHTML = ''; });
 
     if (round == 5) {
-        round = -1; wonRounds = [0, 0];
+        round = 0; wonRounds = [0, 0];
     }
 
     if (data != "D") data.forEach(e => cells[e].classList.remove(`bg-${colors[ch]}`));
