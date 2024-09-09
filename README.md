@@ -46,11 +46,11 @@ git clone https://github.com/your-username/tic-tac-toe.git
 ### Screenshots
 
 - **Start Screen:** Displays a button to start the game.
-![Start Screen]("./img/sample/start%20screen.png)
+![Start Screen](./img/sample/start%20screen.png)
 - **Game Screen:** 3x3 grid where the player and computer take turns.
-![Game Screen]("./img/sample/game%20screen.png)
+![Game Screen](./img/sample/game%20screen.png)
 - **Result Screen:** Shows the final winner after 5 rounds.
-![Result Screen]("./img/sample/result%20screen.png)
+![Result Screen](./img/sample/result%20screen.png)
 
 
 ### Contributing?
