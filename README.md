@@ -40,7 +40,7 @@ This is a simple Tic Tac Toe game built with HTML, CSS, and JavaScript. The game
 2. Open the `index.html` file in any modern web browser to play the game.
 
 ```bash
-git clone https://github.com/your-username/tic-tac-toe.git
+git clone https://github.com/jAnubhav/Tic-Tac-Toe-JS
 ```
 
 ### Screenshots
