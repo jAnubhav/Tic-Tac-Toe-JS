@@ -108,7 +108,6 @@ const terminate = () => {
     round = 5; nextRound();
 }
 
-
 const layers = document.getElementsByClassName("layer");
 
 const rules = [
@@ -143,8 +142,6 @@ const colors = ["cross", "circle"];
 const score = new Array();
 const score_card = document.getElementById("score-card");
 const score_holder = document.getElementById("score-holder").content;
-
-
 
 document.addEventListener("keydown", event => {
     if (event.key == "Enter" && !layers[0].classList.contains("d-none")) getData();
