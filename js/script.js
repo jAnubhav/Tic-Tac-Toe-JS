@@ -35,19 +35,20 @@ const clicked = ind => {
         setTimeout((round == 5) ? gameEnd : roundEnd, 300);
     }
 
-    if (ch == 0 && data == null) setTimeout(compChance, 500);
+    if (ch == 0 && data == null) {
+        cells.forEach(e => e.classList.toggle("no-click"));
+        setTimeout(compChance, 500);
+    }
 }
 
 const compChance = () => {
     let temp = null;
-    console.log("here")
-
     while (true) {
         temp = Math.floor(Math.random() * 9);
         if (f[temp] == -1) break;
-    }
+    } clicked(temp);
 
-    clicked(temp);
+    cells.forEach(e => e.classList.toggle("no-click"));
 }
 
 const checkWinner = () => {    
