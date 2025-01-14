@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./css/utils.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <section class="w-full h-100 bg-dark1">
+        <section class="d-grid w-full h-100 bg-dark2 layer">
+            <div class="d-grid bg-dark1" id="pop-up">
+                <p class="head-text">Welcome to Tic Tac Toe</p>
+
+                <div class="d-grid gtc-2 g-20">
+                    <div class="d-grid" id="rule-grid">
+                        <p class="sub-text">Game Rules</p>
+                    </div>
+
+                    <template id="rule-card-template">
+                        <div class="d-flex rule-card">
+                            <img class="sm-icon"><p></p><img class="lg-icon">
+                        </div>
+                    </template>
+
+                    <div class="d-grid" id="name-grid">
+                        <p class="sub-text">Ready to Roll?</p>
+                        <p class="nor-text">Drop your name below to kick off the game and get ready for some serious fun
+                            and excitement ahead!</p>
+
+                        <input type="text" class="w-full br-10" name="name" id="name" autocomplete="off" maxlength="15">
+                        <button class="w-full bg-yellow btn br-10" onclick="getData()">Start</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="d-none d-flex jc-center w-full h-100 bg-dark2 layer">
+            <div class="d-grid p-10 bg-fade" id="grid-container">
+                <template data-entity><img src="./img/entity/cross.png" alt="Cross"></template>
+                <template data-entity><img src="./img/entity/circle.png" alt="Circle"></template>
+    
+                <template data-entity><img src="./img/entity/cross black.png" alt="Cross"></template>
+                <template data-entity><img src="./img/entity/circle black.png" alt="Circle"></template>
+            </div>
+    
+            <div class="d-flex fld-col" id="card-container">
+                <div class="d-flex fld-col jc-center bg-yellow round-box br-50">
+                    <p class="f-700 head-text" id="round"></p> <p class="sub-text">Round</p>
+                </div>
+    
+                <div class="d-flex g-30" id="cards">
+                    <p class="d-grid bg-yellow f-700 br-50 round-box" id="vs-box">V/S</p>
+                </div>
+    
+                <template id="card-template">
+                    <div class="d-flex fld-col g-30">
+                        <div class="d-flex fld-col jc-center p-10 box card">
+                            <img class="br-50 round-box"> <p class="name" data-name></p>
+                            <div class="bg-dark1 br-10 en-holder" data-en></div>
+                        </div>
+                        
+                        <p class="p-10 box" data-round>Rounds Won: <label></label></p>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+        <section class="d-none d-grid w-full h-100 bg-dark2 layer">
+            <div class="d-grid bg-dark1 g-30 br-10" id="end-pop-up">
+                <p class="head-text" id="round-text"></p>
+    
+                <div class="d-flex g-30" id="score-card"></div>
+                
+                <template id="score-holder">
+                    <div class="d-grid p-10 bg-yellow br-10 sub-text">
+                        <p>Score</p> <p data-score></p>
+                    </div>
+                </template>
+    
+                <div class="d-flex g-30">
+                    <button class="bg-yellow br-10 btn" onclick="nextRound()" id="g-btn"></button>
+                    <button class="bg-yellow br-10 btn" onclick="terminate()">Terminate</button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
